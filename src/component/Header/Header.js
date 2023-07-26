@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const menuItems = (
     <>
-      <li>
+      <li className="text-xl">
         <Link to={"/home"}>Home</Link>
+      </li>
+      <li className="text-xl" >
+        <Link to={"/login"}>Login</Link>
       </li>
     </>
   );
