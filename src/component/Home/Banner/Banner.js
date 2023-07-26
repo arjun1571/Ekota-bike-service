@@ -10,7 +10,9 @@ const Banner = () => {
         <p className="lg:mb-5 md:mb-4 mb-2">
           Computer-controlled digital transistorized with electronic advance
         </p>
-        <h1 className="font-bold text-4xl lg:mb-5 md:mb-4 mb-2">Providing the highest service is our first responsibility</h1>
+        <h1 className="font-bold text-4xl lg:mb-5 md:mb-4 mb-2">
+          Providing the highest service is our first responsibility
+        </h1>
         <p>
           Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
           sint. Velit officia consequat duis enim velit mollit. Exercitation
