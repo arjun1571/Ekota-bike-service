@@ -1,5 +1,6 @@
 import React from "react";
 import login from "../../asset/login.avif"
+import { Link } from "react-router-dom";
 
 const Login = () => {
     const handleSubmit=(event)=>{
@@ -7,13 +8,13 @@ const Login = () => {
 
     }
   return (
-    <div className="hero my-10 lg:p-20 md:p-10 p-2 ">
+    <div className="hero lg:p-10 md:p-10 p-2 ">
       <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
         <div className="text-center lg:text-left">
           
         <img src={login} alt="" />
         </div>
-        <div className="card  w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="card  w-full max-w-sm shadow-2xl bg-base-100 lg:p-7 p-3">
           <form onSubmit={handleSubmit} className="card-body">
           <h1 className="text-5xl font-bold my-2 text-center">Login now!</h1>
             <div className="form-control">
@@ -36,9 +37,9 @@ const Login = () => {
                 className="input input-bordered"
               />
               <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
+                <Link className="label-text-alt link link-hover">
                   Forgot password?
-                </a>
+                </Link>
               </label>
             </div>
             <div className="form-control mt-6">
@@ -46,6 +47,7 @@ const Login = () => {
 
             </div>
           </form>
+          <p className="text-center">Have a new user? <Link className="font-bold" to={"/signup"}>Sign Up</Link> </p>
         </div>
       </div>
     </div>
