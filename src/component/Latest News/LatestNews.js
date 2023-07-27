@@ -1,5 +1,7 @@
 import React from 'react';
-import fubike from "../../asset/futurebike (1).png"
+import fubike from "../../asset/fu1 (1).png"
+import fubike1 from "../../asset/fu5.png"
+import fubike2 from "../../asset/fu1 (3).png"
 const LatestNews = () => {
     return (
         <div className=' mb-10'>
@@ -9,10 +11,10 @@ const LatestNews = () => {
                     <img src={fubike} alt="" />
                 </div>
                 <div>
-                    <img src={fubike} alt="" />
+                    <img src={fubike1} alt="" />
                 </div>
                 <div>
-                    <img src={fubike} alt="" />
+                    <img src={fubike2} alt="" />
                 </div>
 
             </div>

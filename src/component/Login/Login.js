@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import login from "../../asset/login.avif"
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const Login = () => {
+    const {logInUser}=useContext(AuthContext)
     const handleSubmit=(event)=>{
         event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email,password);
+        logInUser(email,password)
+        .then(result => {
+            const user=result.user;
+            console.log(user);
+            form.reset()
+        })
+        .catch(err=> console.log(err))
 
     }
   return (
@@ -23,6 +36,7 @@ const Login = () => {
               </label>
               <input
                 type="text"
+                name="email"
                 placeholder="email"
                 className="input input-bordered"
               />
@@ -33,6 +47,7 @@ const Login = () => {
               </label>
               <input
                 type="text"
+                name="password"
                 placeholder="password"
                 className="input input-bordered"
               />

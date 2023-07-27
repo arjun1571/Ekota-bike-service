@@ -22,6 +22,7 @@ const SingnUp = () => {
     }
     return (
         <div className="hero lg:p-10 md:p-10 p-2 ">
+           
       <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
         <div className="text-center lg:text-left">
           
