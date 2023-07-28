@@ -20,6 +20,7 @@ const CheakOut = () => {
       name,
       mobile,
       message,
+      email:user.email,
     };
     console.log(order);
     fetch("http://localhost:5000/orders", {

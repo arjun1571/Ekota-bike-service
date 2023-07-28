@@ -4,6 +4,7 @@ import Home from "../component/Home/Home";
 import Login from "../component/Login/Login";
 import SingnUp from "../component/SignUp/SingnUp";
 import CheakOut from "../component/CheakOut/CheakOut";
+import Orders from "../component/Orders/Orders";
 
 
  export const router = createBrowserRouter([
@@ -31,6 +32,10 @@ import CheakOut from "../component/CheakOut/CheakOut";
           path:"/cheakout/:id",
           element:<CheakOut></CheakOut>,
           loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+        },
+        {
+          path:"/orders",
+          element:<Orders></Orders>
         },
       ]
     },

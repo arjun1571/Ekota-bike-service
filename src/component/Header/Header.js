@@ -10,6 +10,9 @@ const Header = () => {
       <li className="text-xl" >
         <Link to={"/login"}>Login</Link>
       </li>
+      <li className="text-xl" >
+        <Link to={"/orders"}>Orders</Link>
+      </li>
     </>
   );
   return (
