@@ -5,6 +5,7 @@ import Login from "../component/Login/Login";
 import SingnUp from "../component/SignUp/SingnUp";
 import CheakOut from "../component/CheakOut/CheakOut";
 import Orders from "../component/Orders/Orders";
+import PrivateRoute from "../PrivvateRoute/PrivateRoute";
 
 
  export const router = createBrowserRouter([
@@ -30,7 +31,7 @@ import Orders from "../component/Orders/Orders";
         },
         {
           path:"/cheakout/:id",
-          element:<CheakOut></CheakOut>,
+          element:<PrivateRoute><CheakOut></CheakOut></PrivateRoute>,
           loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
         },
         {
