@@ -13,13 +13,28 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email,password);
+
         logInUser(email,password)
         .then(result => {
             const user=result.user;
             console.log(user);
+            const currentUser= {
+              email:user.email
+            }
+            fetch("http://localhost:5000/jwt",{
+              method:"POST",
+              headers:{
+                "content-type":"application/json"
+              },
+                body: JSON.stringify(currentUser)
+            })
+            .then(res=>res.json())
+            .then(data=>{
+              console.log(data);
+            })
+
             form.reset()
-            navigate(from, {replace: true})
+            // navigate(from, {replace: true})
         })
         .catch(err=> console.log(err))
 
