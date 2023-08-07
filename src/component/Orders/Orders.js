@@ -4,20 +4,34 @@ import OrdersCart from "./OrdersCart";
 
 const Orders = () => {
   const [Porders, setOrders] = useState([]);
-  const { user } = useContext(AuthContext);
+  const { user,LogOut } = useContext(AuthContext);
   console.log(Porders);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders?email=${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => setOrders(data));
-  }, [user?.email]);
+    fetch(`https://ekota-bike-service-server.vercel.app/orders?email=${user?.email}`,{
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("logToken")}`
+      }
+    })
+      .then((res) =>{
+        if(res.status === 401 || res.status === 403){
+          return LogOut()
+        }
+         return res.json()
+      })
+      .then((data) => {
+        setOrders(data)
+      });
+  }, [user?.email,LogOut]);
 
   const handleClick = (id) => {
     const proceed = window.confirm("are you sure this service delete now");
     if (proceed) {
-      fetch(`http://localhost:5000/orders/${id}`, {
+      fetch(`https://ekota-bike-service-server.vercel.app/orders/${id}`, {
         method: "DELETE",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("logToken")}`
+        }
       })
         .then((res) => res.json())
         .then((data) => {

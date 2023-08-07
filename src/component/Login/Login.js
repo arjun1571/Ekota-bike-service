@@ -21,7 +21,7 @@ const Login = () => {
             const currentUser= {
               email:user.email
             }
-            fetch("http://localhost:5000/jwt",{
+            fetch("https://ekota-bike-service-server.vercel.app/jwt",{
               method:"POST",
               headers:{
                 "content-type":"application/json"
@@ -32,10 +32,11 @@ const Login = () => {
             .then(data=>{
               console.log(data);
               localStorage.setItem("logToken",data.token)
+               navigate(from, {replace: true})
             })
 
             form.reset()
-            // navigate(from, {replace: true})
+           
         })
         .catch(err=> console.log(err))
 

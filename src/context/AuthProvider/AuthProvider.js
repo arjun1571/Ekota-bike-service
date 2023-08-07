@@ -21,6 +21,7 @@ const AuthProvider = ({children}) => {
     }
 
     const LogOut =()=>{
+        localStorage.removeItem("logToken")
         signOut(auth)
     }
     useEffect(()=>{

@@ -23,10 +23,12 @@ const CheakOut = () => {
       email:user.email,
     };
     console.log(order);
-    fetch("http://localhost:5000/orders", {
+    fetch("https://ekota-bike-service-server.vercel.app/orders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+
+        authorization: `Bearer ${localStorage.getItem("logToken")}`
       },
       body: JSON.stringify(order),
     })
